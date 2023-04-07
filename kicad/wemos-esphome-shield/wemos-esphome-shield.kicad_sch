@@ -1215,7 +1215,7 @@
     (property "Value" "Conn_01x05_Female" (id 1) (at 180.34 59.6899 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
-    (property "Footprint" "internal:APDS9960" (id 2) (at 179.07 58.42 0)
+    (property "Footprint" "internal:APDS9960 double pinout" (id 2) (at 179.07 58.42 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "~" (id 3) (at 179.07 58.42 0)
@@ -1515,7 +1515,7 @@
 
   (symbol_instances
     (path "/3fcd1565-3fed-48e7-a513-b35879eb331c"
-      (reference "APDS1") (unit 1) (value "Conn_01x05_Female") (footprint "internal:APDS9960")
+      (reference "APDS1") (unit 1) (value "Conn_01x05_Female") (footprint "internal:APDS9960 double pinout")
     )
     (path "/4aa4f53a-1c9a-4e3e-a306-aaddf84769e0"
       (reference "BME1") (unit 1) (value "Conn_01x04_Female") (footprint "internal:BME280")

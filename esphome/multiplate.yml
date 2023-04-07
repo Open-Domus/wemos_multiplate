@@ -1,0 +1,98 @@
+substitutions:
+  device_name: piastra-dev-1
+
+esphome:
+  name: ${device_name}
+
+esp8266:
+  board: d1_mini
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: ${device_name} hotspot
+    password: !secret hotspot_password
+
+logger:
+
+api:
+
+ota:
+
+i2c:
+  scl: D1
+  sda: D2
+  scan: true
+
+apds9960:
+  address: 0x39
+  update_interval: 60s
+
+sensor:
+- platform: bme280
+  temperature:
+    name: "${device_name} temperature"
+  pressure:
+    name: "${device_name} pressure"
+  humidity:
+    name: "${device_name} humidity"
+  address: 0x76
+  update_interval: 120s
+- platform: adc
+  pin: A0
+  name: "${device_name} illuminance"
+  device_class: illuminance
+  unit_of_measurement: lx
+  filters:
+    - lambda: |-
+        return (x / 10000.0) * 2000000.0;
+- platform: apds9960
+  type: PROXIMITY
+  name: "${device_name} proximity"
+
+binary_sensor:
+- platform: gpio
+  pin: D5
+  name: "${device_name} motion"
+  device_class: motion
+  filters:
+  - invert:
+  - delayed_off: 10s
+- platform: apds9960
+  direction: UP
+  name: "${device_name} gesture up"
+- platform: apds9960
+  direction: DOWN
+  name: "${device_name} gesture down"
+- platform: apds9960
+  direction: LEFT
+  name: "${device_name} gesture left"
+- platform: apds9960
+  direction: RIGHT
+  name: "${device_name} gesture right"
+
+light:
+- platform: neopixelbus
+  pin: D6
+  name: "${device_name} leds"
+  type: GRB
+  variant: WS2812
+  num_leds: 1
+
+button:
+- platform: restart
+  name: "${device_name} reset"
+
+switch:
+- platform: gpio
+  pin: D3
+  id: buzzer
+  name: "${device_name} buzzer"
+  on_turn_on:
+  - delay: 750ms
+  - switch.turn_off: buzzer
+- platform: gpio
+  pin: D7
+  name: "${device_name} relay"

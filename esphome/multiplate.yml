@@ -31,20 +31,19 @@ apds9960:
   update_interval: 60s
 
 sensor:
-- platform: bme280
+- platform: sht3xd
   temperature:
     name: "${device_name} temperature"
-  pressure:
-    name: "${device_name} pressure"
   humidity:
     name: "${device_name} humidity"
-  address: 0x76
+  address: 0x44
   update_interval: 120s
 - platform: adc
   pin: A0
   name: "${device_name} illuminance"
   device_class: illuminance
   unit_of_measurement: lx
+  update_interval: 120s
   filters:
     - lambda: |-
         return (x / 10000.0) * 2000000.0;

@@ -28,7 +28,8 @@ i2c:
 
 apds9960:
   address: 0x39
-  update_interval: 60s
+  update_interval: 0.5s
+  ambient_light_gain: 64x
 
 sensor:
 - platform: sht3xd
@@ -50,6 +51,9 @@ sensor:
 - platform: apds9960
   type: PROXIMITY
   name: "${device_name} proximity"
+- platform: apds9960
+  type: CLEAR
+  name: "${device_name} clear"
 
 binary_sensor:
 - platform: gpio

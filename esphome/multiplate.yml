@@ -28,7 +28,7 @@ i2c:
 
 apds9960:
   address: 0x39
-  update_interval: 0.5s
+  update_interval: 120s
   ambient_light_gain: 64x
 
 sensor:
@@ -53,7 +53,7 @@ sensor:
   name: "${device_name} proximity"
 - platform: apds9960
   type: CLEAR
-  name: "${device_name} clear"
+  name: "${device_name} ambient light"
 
 binary_sensor:
 - platform: gpio
@@ -80,9 +80,8 @@ light:
 - platform: neopixelbus
   pin: D6
   name: "${device_name} leds"
-  type: GRB
-  variant: WS2812
-  num_leds: 1
+  variant: WS2811
+  num_leds: 3
 
 button:
 - platform: restart

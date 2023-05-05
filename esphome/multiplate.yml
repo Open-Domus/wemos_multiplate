@@ -1,5 +1,5 @@
 substitutions:
-  device_name: piastra-dev-1
+  device_name: piastra-prototipo-01
 
 esphome:
   name: ${device_name}
@@ -31,12 +31,42 @@ apds9960:
   update_interval: 120s
   ambient_light_gain: 64x
 
+display:
+- platform: ssd1306_i2c
+  model: SSD1306 128x32
+  rotation: 180
+  address: 0x3C
+  lambda: |-
+    it.printf(0, 0, id(font1), TextAlign::TOP_LEFT, "OPENDOMUS");
+    it.strftime(128, 0, id(font1), TextAlign::TOP_RIGHT, "%H:%M", id(display_time).now());
+    if (id(display_temperature).has_state()) {
+      it.printf(0, 16, id(font1), TextAlign::TOP_LEFT, "T %.1f", id(display_temperature).state);
+    }
+    if (id(display_humidity).has_state()) {
+      it.printf(128, 16, id(font1), TextAlign::TOP_RIGHT, "H %.0f%%", id(display_humidity).state);
+    }
+    if (id(display_motion).state) {
+      it.printf(64, 16, id(font1), TextAlign::TOP_CENTER, "+");
+    }
+
+time:
+- platform: homeassistant
+  timezone: Europe/Rome
+  id: display_time
+
+font:
+- file: retrogaming.ttf
+  id: font1
+  size: 11
+
 sensor:
 - platform: sht3xd
   temperature:
     name: "${device_name} temperature"
+    id: display_temperature
   humidity:
     name: "${device_name} humidity"
+    id: display_humidity
   address: 0x44
   update_interval: 120s
 - platform: adc
@@ -44,6 +74,7 @@ sensor:
   name: "${device_name} illuminance"
   device_class: illuminance
   unit_of_measurement: lx
+  accuracy_decimals: 0
   update_interval: 120s
   filters:
     - lambda: |-
@@ -59,6 +90,7 @@ binary_sensor:
 - platform: gpio
   pin: D5
   name: "${device_name} motion"
+  id: display_motion
   device_class: motion
 - platform: apds9960
   direction: UP

@@ -60,9 +60,6 @@ binary_sensor:
   pin: D5
   name: "${device_name} motion"
   device_class: motion
-  filters:
-  - invert:
-  - delayed_off: 10s
 - platform: apds9960
   direction: UP
   name: "${device_name} gesture up"

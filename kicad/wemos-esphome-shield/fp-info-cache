@@ -1,4 +1,4 @@
-20606861587194532
+20605187198917084
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -86454,15 +86454,8 @@ APDS9960
 
 
 0
-5
-5
-internal
-APDS9960 double pinout
-
-
-0
-9
-5
+6
+6
 internal
 BME280
 
@@ -86489,8 +86482,8 @@ SSD1306 OLED 128x32
 
 
 0
-0
-0
+4
+4
 internal
 TEMT6000
 

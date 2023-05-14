@@ -1,5 +1,6 @@
 substitutions:
   device_name: piastra-prototipo-01
+  display_rotation: "0°"
 
 # You can comment out the lines of the modules you are not using.
 packages:

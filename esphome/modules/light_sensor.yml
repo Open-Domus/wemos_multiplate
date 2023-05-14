@@ -5,11 +5,7 @@ sensor:
   device_class: illuminance
   unit_of_measurement: lx
   accuracy_decimals: 0
-  update_interval: 15s
+  update_interval: 120s
   filters:
   - lambda: |-
       return (x / 10000.0) * 2000000.0;
-  - sliding_window_moving_average:
-      window_size: 12
-      send_every: 8
-      send_first_at: 8

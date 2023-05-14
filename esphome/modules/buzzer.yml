@@ -1,14 +1,14 @@
 button:
 - platform: template
   name: "${device_name}-buzzer"
+  on_press:
+  - script.execute: buzzer_fast
 
 switch:
 - platform: gpio
   pin: D3
   id: buzzer
   internal: true
-  on_turn_on:
-  - script.execute: buzzer_fast
 
 script:
 - id: buzzer_fast

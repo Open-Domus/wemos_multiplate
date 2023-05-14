@@ -1,7 +1,7 @@
 display:
 - platform: ssd1306_i2c
   model: SSD1306 128x32
-  rotation: 180
+  rotation: ${display_rotation}
   address: 0x3C
   lambda: |-
     it.printf(0, 0, id(font1), TextAlign::TOP_LEFT, "OpenDomus");

@@ -1,0 +1,60 @@
+button:
+- platform: template
+  name: "${device_name}-buzzer"
+
+switch:
+- platform: gpio
+  pin: D3
+  id: buzzer
+  internal: true
+  on_turn_on:
+  - script.execute: buzzer_fast
+
+script:
+- id: buzzer_fast
+  then:
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+- id: buzzer_missile
+  then:
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 300ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 100ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 300ms
+    - switch.turn_off: buzzer
+- id: buzzer_alert
+  then:
+    - switch.turn_on: buzzer
+    - delay: 400ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 400ms
+    - switch.turn_off: buzzer
+    - delay: 50ms
+    - switch.turn_on: buzzer
+    - delay: 400ms
+    - switch.turn_off: buzzer

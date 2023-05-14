@@ -1,0 +1,4 @@
+switch:
+- platform: gpio
+  pin: D7
+  name: "${device_name}-relay"

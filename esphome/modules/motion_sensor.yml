@@ -1,0 +1,6 @@
+binary_sensor:
+- platform: gpio
+  pin: D5
+  name: "${device_name}-motion"
+  id: display_motion
+  device_class: motion

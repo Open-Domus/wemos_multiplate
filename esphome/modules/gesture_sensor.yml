@@ -1,0 +1,27 @@
+apds9960:
+  address: 0x39
+  update_interval: 5s
+  ambient_light_gain: 64x
+  proximity_gain: 4x
+
+sensor:
+- platform: apds9960
+  type: PROXIMITY
+  name: "${device_name}-proximity"
+- platform: apds9960
+  type: CLEAR
+  name: "${device_name}-ambient-light"
+
+binary_sensor:
+- platform: apds9960
+  direction: UP
+  name: "${device_name}-gesture-up"
+- platform: apds9960
+  direction: DOWN
+  name: "${device_name}-gesture-down"
+- platform: apds9960
+  direction: LEFT
+  name: "${device_name}-gesture-left"
+- platform: apds9960
+  direction: RIGHT
+  name: "${device_name}-gesture-right"

@@ -1,0 +1,15 @@
+sensor:
+- platform: adc
+  pin: A0
+  name: "${device_name}-illuminance"
+  device_class: illuminance
+  unit_of_measurement: lx
+  accuracy_decimals: 0
+  update_interval: 15s
+  filters:
+  - lambda: |-
+      return (x / 10000.0) * 2000000.0;
+  - sliding_window_moving_average:
+      window_size: 12
+      send_every: 8
+      send_first_at: 8

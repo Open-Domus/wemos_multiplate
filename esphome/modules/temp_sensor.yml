@@ -1,0 +1,20 @@
+sensor:
+- platform: sht3xd
+  temperature:
+    name: "${device_name}-temperature"
+    id: display_temperature
+    filters:
+    - sliding_window_moving_average:
+        window_size: 12
+        send_every: 8
+        send_first_at: 8
+  humidity:
+    name: "${device_name}-humidity"
+    id: display_humidity
+    filters:
+    - sliding_window_moving_average:
+        window_size: 12
+        send_every: 8
+        send_first_at: 8
+  address: 0x44
+  update_interval: 15s

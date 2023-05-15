@@ -2,7 +2,7 @@ sensor:
 - platform: sht3xd
   temperature:
     name: "${device_name}-temperature"
-    id: display_temperature
+    id: temperature_sensor
     filters:
     - sliding_window_moving_average:
         window_size: 12
@@ -10,7 +10,7 @@ sensor:
         send_first_at: 8
   humidity:
     name: "${device_name}-humidity"
-    id: display_humidity
+    id: humidity_sensor
     filters:
     - sliding_window_moving_average:
         window_size: 12

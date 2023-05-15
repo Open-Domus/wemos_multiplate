@@ -1,8 +1,9 @@
 sensor:
 - platform: adc
   pin: A0
-  name: "${device_name}-illuminance"
   device_class: illuminance
+  name: "${device_name}-illuminance"
+  id: light_sensor
   unit_of_measurement: lx
   accuracy_decimals: 0
   update_interval: 120s

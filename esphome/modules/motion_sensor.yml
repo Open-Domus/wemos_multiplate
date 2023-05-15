@@ -1,6 +1,17 @@
 binary_sensor:
 - platform: gpio
   pin: D5
-  name: "${device_name}-motion"
-  id: display_motion
   device_class: motion
+  name: "${device_name}-motion"
+  id: motion_sensor
+- platform: template
+  id: display_motion_activate
+  internal: true
+  lambda: |-
+    return id(motion_sensor).state;
+  filters:
+    - delayed_off: 120s
+  on_press:
+    - display.page.show: display_page_1
+  on_release:
+    - display.page.show: display_page_empty

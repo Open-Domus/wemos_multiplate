@@ -8,9 +8,11 @@ sensor:
 - platform: apds9960
   type: PROXIMITY
   name: "${device_name}-proximity"
+  id: proximity_sensor
 - platform: apds9960
   type: CLEAR
   name: "${device_name}-ambient-light"
+  id: ambient_light_sensor
 
 binary_sensor:
 - platform: apds9960

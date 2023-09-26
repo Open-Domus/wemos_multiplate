@@ -3,6 +3,10 @@ button:
   name: "${device_name}-buzzer"
   on_press:
   - script.execute: buzzer_fast
+- platform: template
+  name: "${device_name}-buzzer-alt"
+  on_press:
+  - script.execute: buzzer_missile
 
 switch:
 - platform: gpio

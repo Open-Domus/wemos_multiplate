@@ -22,6 +22,7 @@ i2c:
   scl: D1
   sda: D2
   scan: true
+  frequency: 400kHz
 
 button:
 - platform: restart

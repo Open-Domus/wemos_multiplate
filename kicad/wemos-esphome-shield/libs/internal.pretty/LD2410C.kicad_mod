@@ -9,7 +9,7 @@
       (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 620fa79c-101f-4746-a356-11170ba39c9b)
   )
-  (fp_text user "VCC GND OUT  RX  TX" (at 0 -1.7 unlocked) (layer "F.SilkS")
+  (fp_text user "VCC GND OUT  RX  TX" (at -0.254 -1.7 unlocked) (layer "F.SilkS")
       (effects (font (size 1 0.7) (thickness 0.15)))
     (tstamp 0c82c997-ac89-4829-a403-70224e81ab85)
   )

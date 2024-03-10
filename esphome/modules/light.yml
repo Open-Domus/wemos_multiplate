@@ -1,6 +1,6 @@
 light:
 - platform: neopixelbus
-  pin: D6
+  pin: D5
   name: "${device_name}-leds"
   variant: WS2811
-  num_leds: 3
+  num_leds: 2

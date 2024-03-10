@@ -8,8 +8,8 @@ packages:
   display: !include modules/display.yml
   light: !include modules/light.yml
   buzzer: !include modules/buzzer.yml
-  relay: !include modules/relay.yml
+  # relay: !include modules/relay.yml
   temp_semsor: !include modules/temp_sensor.yml
-  gesture_sensor: !include modules/gesture_sensor.yml
+  # gesture_sensor: !include modules/gesture_sensor.yml
   light_sensor: !include modules/light_sensor.yml
   motion_sensor: !include modules/motion_sensor.yml

@@ -1,4 +1,4 @@
-22669737716746385
+22671447951868358
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -93094,6 +93094,13 @@ SR602
 3
 internal
 SSD1306 OLED 128x32
+
+
+0
+4
+4
+internal
+SSD1306 OLED 128x64
 
 
 0

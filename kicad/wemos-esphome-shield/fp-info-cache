@@ -1,4 +1,4 @@
-22671461604159573
+22673173253034392
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -93084,6 +93084,13 @@ LED ring
 
 0
 6
+3
+internal
+SOT-23_Handsoldering
+SOT-23, Handsoldering
+SOT-23
+0
+3
 3
 internal
 SR602

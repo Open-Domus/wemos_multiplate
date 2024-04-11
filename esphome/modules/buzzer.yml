@@ -1,16 +1,20 @@
 button:
 - platform: template
-  name: "${device_name}-buzzer"
+  name: "${device_name}-buzzer-a"
   on_press:
   - script.execute: buzzer_fast
 - platform: template
-  name: "${device_name}-buzzer-alt"
+  name: "${device_name}-buzzer-b"
   on_press:
   - script.execute: buzzer_missile
+- platform: template
+  name: "${device_name}-buzzer-c"
+  on_press:
+  - script.execute: buzzer_alert
 
 switch:
 - platform: gpio
-  pin: D3
+  pin: D8
   id: buzzer
   internal: true
 

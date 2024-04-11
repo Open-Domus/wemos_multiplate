@@ -2,6 +2,7 @@ display:
 - platform: ssd1306_i2c
   id: oled_display
   model: SSD1306 128x32
+  # model: SSD1306 128x64
   rotation: ${display_rotation}
   address: 0x3C
   pages:

@@ -1,3 +1,4 @@
 .DS_Store
-#auto_saved_files#
+/venv
+/esphome/venv
 /kicad/wemos-esphome-shield/wemos-esphome-shield-backups

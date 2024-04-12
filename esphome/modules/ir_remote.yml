@@ -2,6 +2,6 @@ remote_transmitter:
   pin: D6
   carrier_duty_percent: 50%
 
-climate:
-  - platform: daikin
-    name: ${device_name}_climate
+# climate:
+#   - platform: daikin
+#     name: ${device_name}-climate

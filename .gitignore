@@ -1,4 +1,5 @@
 .DS_Store
 /venv
 /esphome/venv
+/kicad/wemos-esphome-shield/gerber
 /kicad/wemos-esphome-shield/wemos-esphome-shield-backups

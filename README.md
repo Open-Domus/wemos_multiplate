@@ -3,7 +3,7 @@
 
 Multifunctional device with esphome compatible sensors and interactive tools to improve your smart home experience.
 
-![front](https://raw.githubusercontent.com/Open-Domus/wemos_multiplate/main/images/2-2-front.png)
+![front](images/2-2-front.png)
 
 ## Esphome compiling and flashing
 - install esphome on your machine. https://esphome.io/guides/installing_esphome.html

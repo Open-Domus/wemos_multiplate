@@ -5,6 +5,21 @@ Multifunctional device with esphome compatible sensors and interactive tools to 
 
 ![front](images/2-2-front.png)
 
+## Features
+
+- OLED display (128x32 or 128x64 are supported)
+- LD2410C 24Ghz presence sensor
+- 2 addressable RGB LEDs
+- beeper
+- SHT31 temperature/humidity sensor
+- 3 IR emitter LEDs
+- BH1750 ambient light sensor (optional)
+- APDS9960 gesture sensor (optional)
+- pin headers for external 5v relay module (optional)
+- extra pin headers for further expandability
+- fits in a 503 wall receptacle
+- 3D printable cover
+
 ## Esphome compiling and flashing
 - install esphome on your machine. https://esphome.io/guides/installing_esphome.html
 - duplicate the `secrets_sample.yaml` file, rename it to `secrets.yaml`, and fill your wifi SSID data in.

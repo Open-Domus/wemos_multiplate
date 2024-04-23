@@ -12,14 +12,12 @@ binary_sensor:
     has_target:
       name: "${device_name}-presence"
       id: motion_sensor
-      on_press:
-        - display.page.show: display_page_1
-      on_release:
-        - display.page.show: display_page_empty
     has_moving_target:
       name: "${device_name}-moving-target"
+      id: moving_target_sensor
     has_still_target:
       name: "${device_name}-still-target"
+      id: still_target_sensor
 
 sensor:
   - platform: ld2410

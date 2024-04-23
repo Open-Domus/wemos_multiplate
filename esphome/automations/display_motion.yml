@@ -1,0 +1,8 @@
+binary_sensor:
+- platform: ld2410
+  has_target:
+    id: !extend motion_sensor
+    on_press:
+      - display.page.show: display_page_1
+    on_release:
+      - display.page.show: display_page_empty

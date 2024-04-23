@@ -1,5 +1,5 @@
 substitutions:
-  device_name: your-device-name
+  device_name: piastra-prototipo-02
   display_rotation: "180"
 
 # You can comment out the lines of the modules you are not using.
@@ -10,8 +10,8 @@ packages:
   buzzer: !include modules/buzzer.yml
   relay: !include modules/relay.yml
   temp_sensor: !include modules/temp_sensor.yml
-  # gesture_sensor: !include modules/gesture_sensor.yml
-  light_sensor: !include modules/light_sensor.yml
+  gesture_sensor: !include modules/gesture_sensor.yml
+  # light_sensor: !include modules/light_sensor.yml
   motion_sensor: !include modules/motion_sensor.yml
   ir_remote: !include modules/ir_remote.yml
 

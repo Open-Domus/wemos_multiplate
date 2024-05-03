@@ -10,14 +10,26 @@ ld2410:
 binary_sensor:
   - platform: ld2410
     has_target:
-      name: "${device_name}-presence"
-      id: motion_sensor
+      id: motion_sensor_internal
+      internal: true
     has_moving_target:
-      name: "${device_name}-moving-target"
-      id: moving_target_sensor
+      id: moving_target_sensor_internal
+      internal: true
     has_still_target:
-      name: "${device_name}-still-target"
-      id: still_target_sensor
+      id: still_target_sensor_internal
+      internal: true
+  - platform: copy
+    source_id: motion_sensor_internal
+    id: motion_sensor
+    name: "${device_name}-presence"
+  - platform: copy
+    source_id: moving_target_sensor_internal
+    id: moving_target_sensor
+    name: "${device_name}-moving-target"
+  - platform: copy
+    source_id: still_target_sensor_internal
+    id: still_target_sensor
+    name: "${device_name}-still-target"
 
 sensor:
   - platform: ld2410

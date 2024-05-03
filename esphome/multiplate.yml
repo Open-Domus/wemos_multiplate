@@ -16,5 +16,5 @@ packages:
   ir_remote: !include modules/ir_remote.yml
 
 # Automations: uncomment the ones you want to activate.
-  # display_motion: !include automations/display_motion.yml
+  display_motion: !include automations/display_motion.yml
   motion_status_leds: !include automations/motion_status_leds.yml

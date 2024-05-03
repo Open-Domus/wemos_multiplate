@@ -1,40 +1,37 @@
 binary_sensor:
-- platform: ld2410
-  has_moving_target:
-    id: !extend moving_target_sensor
-    on_press:
-      then:
-        - light.addressable_set:
-            id: rgb_leds
-            range_from: 0
-            range_to: 1
-            red: 100%
-            green: 0%
-            blue: 0%
-            color_brightness: 25%
-    on_release: 
-      then:
-        - light.addressable_set:
-            id: rgb_leds
-            range_from: 0
-            range_to: 1
-            color_brightness: 0%
-  has_still_target:
-    id: !extend still_target_sensor
-    on_press:
-      then:
-        - light.addressable_set:
-            id: rgb_leds
-            range_from: 1
-            range_to: 2
-            red: 0%
-            green: 100%
-            blue: 0%
-            color_brightness: 25%
-    on_release: 
-      then:
-        - light.addressable_set:
-            id: rgb_leds
-            range_from: 1
-            range_to: 2
-            color_brightness: 0%
+- id: !extend moving_target_sensor
+  on_press:
+    then:
+      - light.addressable_set:
+          id: rgb_leds
+          range_from: 0
+          range_to: 1
+          red: 100%
+          green: 0%
+          blue: 0%
+          color_brightness: 25%
+  on_release: 
+    then:
+      - light.addressable_set:
+          id: rgb_leds
+          range_from: 0
+          range_to: 1
+          color_brightness: 0%
+- id: !extend still_target_sensor
+  on_press:
+    then:
+      - light.addressable_set:
+          id: rgb_leds
+          range_from: 1
+          range_to: 2
+          red: 0%
+          green: 100%
+          blue: 0%
+          color_brightness: 25%
+  on_release: 
+    then:
+      - light.addressable_set:
+          id: rgb_leds
+          range_from: 1
+          range_to: 2
+          color_brightness: 0%

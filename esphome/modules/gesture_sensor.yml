@@ -9,6 +9,13 @@ sensor:
   type: PROXIMITY
   name: "${device_name}-proximity"
   id: proximity_sensor
+  filters:
+    - calibrate_linear:
+      - 3 -> 0
+      - 20 -> 100
+    - clamp:
+        min_value: 0
+        max_value: 100  
 - platform: apds9960
   type: CLEAR
   name: "${device_name}-ambient-light"

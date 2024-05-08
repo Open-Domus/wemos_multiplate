@@ -5,33 +5,37 @@ binary_sensor:
       - light.addressable_set:
           id: rgb_leds
           range_from: 0
-          range_to: 1
+          range_to: 0
           red: 100%
           green: 0%
           blue: 0%
-          color_brightness: 25%
+          color_brightness: 20%
   on_release: 
     then:
       - light.addressable_set:
           id: rgb_leds
           range_from: 0
-          range_to: 1
-          color_brightness: 0%
+          range_to: 0
+          red: 0%
+          green: 0%
+          blue: 0%
 - id: !extend still_target_sensor
   on_press:
     then:
       - light.addressable_set:
           id: rgb_leds
           range_from: 1
-          range_to: 2
+          range_to: 1
           red: 0%
           green: 100%
           blue: 0%
-          color_brightness: 25%
+          color_brightness: 20%
   on_release: 
     then:
       - light.addressable_set:
           id: rgb_leds
           range_from: 1
-          range_to: 2
-          color_brightness: 0%
+          range_to: 1
+          red: 0%
+          green: 0%
+          blue: 0%

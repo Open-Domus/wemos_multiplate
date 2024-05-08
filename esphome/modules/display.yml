@@ -19,6 +19,10 @@ display:
         if (id(humidity_sensor).has_state()) {
           it.printf(128, 16, id(font1), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
         }
+        it.line(0,0,127,0);
+        it.line(0,0,0,31);
+        it.line(0,31,127,31);
+        it.line(127,0,127,31);
 
 time:
 - platform: homeassistant

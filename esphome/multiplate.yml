@@ -6,7 +6,7 @@ substitutions:
 packages:
   common: !include modules/common.yml
   display: !include modules/display.yml
-  light: !include modules/light.yml
+  rgb_leds: !include modules/rgb_leds.yml
   buzzer: !include modules/buzzer.yml
   relay: !include modules/relay.yml
   temp_sensor: !include modules/temp_sensor.yml

@@ -1,0 +1,7 @@
+light:
+- platform: neopixelbus
+  pin: D5
+  name: "${device_name}-leds"
+  id: rgb_leds
+  variant: WS2811
+  num_leds: 2

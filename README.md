@@ -25,8 +25,25 @@ Multifunctional device with esphome compatible sensors and interactive tools to 
 - duplicate the `secrets_sample.yaml` file, rename it to `secrets.yaml`, and fill your wifi SSID data in.
 - duplicate `esphome/multiplate.yml` file, rename it to your liking.
 - open the duplicated file and edit `device_name` to your liking, and comment/uncomment the modules you want to use.
-  - note that `gesture_sensor` and `light_sensor` cannot be used at the same time at the moment.
-  - if you want to use `ir_remote`, please open `esphome/modules/ir_remote.yml` and add any entity you want, like climate etc.
-  - if you want to use `display`, please open `esphome/modules/display.yml` and comment out the model you are not using.
 - connect the Wemos D1 mini via USB and flash it using the `esphome run` command.
 - disconnect the Wemos D1 mini, insert it into the multiplate, and enjoy.
+
+## Customizing modules
+
+### Gesture sensor
+
+TODO
+
+### OLED Display
+
+You can use either 128x32 or 128x64 OLED modules. Just uncomment the corresponding `display` line in your main yml file.
+
+### IR blaster
+
+If you want to use the IR leds as a remote, please add any entity you want to use the IR transmitter with, to the main yml file. Example:
+
+```
+climate:
+  - platform: daikin
+    name: ${device_name}-climate
+```

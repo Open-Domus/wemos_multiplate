@@ -1,11 +1,11 @@
 substitutions:
   device_name: your-device-name
-  display_rotation: "180"
 
 # You can comment out the lines of the modules you are not using.
 packages:
   common: !include modules/common.yml
-  display: !include modules/display.yml
+  display: !include modules/display_128x32.yml
+  # display: !include modules/display_128x64.yml
   rgb_leds: !include modules/rgb_leds.yml
   buzzer: !include modules/buzzer.yml
   relay: !include modules/relay.yml

@@ -10,13 +10,14 @@ display:
         it.fill(COLOR_OFF);
     - id: display_page_1
       lambda: |-
-        it.strftime(64, 4, id(font_lg), TextAlign::TOP_CENTER, "%H:%M", id(display_time).now());
+        it.strftime(63, 4, id(font_lg), TextAlign::TOP_CENTER, "%H:%M", id(display_time).now());
         if (id(temperature_sensor).has_state()) {
-          it.printf(0, 48, id(font_sm), TextAlign::TOP_LEFT, "T %.1f", id(temperature_sensor).state);
+          it.printf(0, 47, id(font_sm), TextAlign::TOP_LEFT, "T %.1f", id(temperature_sensor).state);
         }
         if (id(humidity_sensor).has_state()) {
-          it.printf(128, 48, id(font_sm), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
+          it.printf(127, 47, id(font_sm), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
         }
+        // it.rectangle(0,0,127,63);
 
 font:
 - file: font/retrogaming.ttf

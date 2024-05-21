@@ -10,12 +10,12 @@ display:
         it.fill(COLOR_OFF);
     - id: display_page_1
       lambda: |-
-        it.strftime(64, 0, id(font_sm), TextAlign::TOP_CENTER, "%H:%M", id(display_time).now());
+        it.strftime(63, 0, id(font_sm), TextAlign::TOP_CENTER, "%H:%M", id(display_time).now());
         if (id(temperature_sensor).has_state()) {
-          it.printf(0, 16, id(font_sm), TextAlign::TOP_LEFT, "T %.1f", id(temperature_sensor).state);
+          it.printf(0, 15, id(font_sm), TextAlign::TOP_LEFT, "T %.1f", id(temperature_sensor).state);
         }
         if (id(humidity_sensor).has_state()) {
-          it.printf(128, 16, id(font_sm), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
+          it.printf(127, 15, id(font_sm), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
         }
 
 font:

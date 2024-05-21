@@ -1,0 +1,34 @@
+display:
+- platform: ssd1306_i2c
+  id: oled_display
+  model: SSD1306 128x64
+  rotation: "180"
+  address: 0x3C
+  pages:
+    - id: display_page_empty
+      lambda: |-
+        it.fill(COLOR_OFF);
+    - id: display_page_1
+      lambda: |-
+        it.strftime(64, 4, id(font_lg), TextAlign::TOP_CENTER, "%H:%M", id(display_time).now());
+        if (id(temperature_sensor).has_state()) {
+          it.printf(0, 48, id(font_sm), TextAlign::TOP_LEFT, "T %.1f", id(temperature_sensor).state);
+        }
+        if (id(humidity_sensor).has_state()) {
+          it.printf(128, 48, id(font_sm), TextAlign::TOP_RIGHT, "H %.0f%%", id(humidity_sensor).state);
+        }
+
+font:
+- file: font/retrogaming.ttf
+  id: font_sm
+  size: 11
+  glyphs: '!"%*()+=,-_.:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz'
+- file: font/retrogaming.ttf
+  id: font_lg
+  size: 27
+  glyphs: '!"%*()+=,-_.:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz'
+
+time:
+- platform: homeassistant
+  # timezone: Europe/Rome
+  id: display_time

@@ -6,4 +6,9 @@ sensor:
   id: light_sensor
   unit_of_measurement: lx
   accuracy_decimals: 0
-  update_interval: 15s
+  update_interval: 30s
+  filters:
+    - median:
+        window_size: 10
+        send_every: 2
+        send_first_at: 2

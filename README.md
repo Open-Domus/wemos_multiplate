@@ -40,10 +40,11 @@ You can use either 128x32 or 128x64 OLED modules. Just uncomment the correspondi
 
 ### IR blaster
 
-If you want to use the IR leds as a remote, please add any entity you want to use the IR transmitter with, to the main yml file. Example:
+If you want to use the IR leds as a remote, please add any entity you want to use the IR transmitter with, to the main yml file. Use `ir_remote` as the transmitter id. Example:
 
 ```
 climate:
   - platform: daikin
     name: ${device_name}-climate
+    transmitter_id: ir_remote
 ```

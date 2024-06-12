@@ -1,8 +1,5 @@
 apds9960:
   address: 0x39
-  update_interval: 5s
-  ambient_light_gain: 64x
-  proximity_gain: 4x
 
 sensor:
 - platform: apds9960

@@ -1,3 +1,4 @@
 remote_transmitter:
   pin: D6
+  id: ir_remote
   carrier_duty_percent: 50%

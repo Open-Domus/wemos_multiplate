@@ -3,5 +3,5 @@ light:
   pin: D5
   name: "${device_name}-leds"
   id: rgb_leds
-  variant: WS2811
+  variant: WS2812
   num_leds: 2

@@ -1,0 +1,55 @@
+uart:
+  tx_pin: GPIO39
+  rx_pin: GPIO37
+  baud_rate: 256000
+  parity: NONE
+  stop_bits: 1
+
+ld2410:
+
+binary_sensor:
+  - platform: ld2410
+    has_target:
+      id: motion_sensor_internal
+      internal: true
+    has_moving_target:
+      id: moving_target_sensor_internal
+      internal: true
+    has_still_target:
+      id: still_target_sensor_internal
+      internal: true
+  - platform: copy
+    source_id: motion_sensor_internal
+    id: motion_sensor
+    name: "${device_name}-presence"
+  - platform: copy
+    source_id: moving_target_sensor_internal
+    id: moving_target_sensor
+    name: "${device_name}-moving-target"
+  - platform: copy
+    source_id: still_target_sensor_internal
+    id: still_target_sensor
+    name: "${device_name}-still-target"
+
+sensor:
+  - platform: ld2410
+    moving_distance:
+      name : "${device_name}-moving-distance"
+    still_distance:
+      name: "${device_name}-still-distance"
+    moving_energy:
+      name: "${device_name}-move-energy"
+    still_energy:
+      name: "${device_name}-still-energy"
+    detection_distance:
+      name: "${device_name}-detection-distance"
+
+switch:
+  - platform: ld2410
+    bluetooth:
+      name: "${device_name}-ld2410-bluetooth"
+
+button:
+  - platform: ld2410
+    factory_reset:
+      name: "${device_name}-ld2410-reset"

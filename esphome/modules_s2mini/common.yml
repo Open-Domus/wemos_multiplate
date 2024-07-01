@@ -1,0 +1,28 @@
+esphome:
+  name: ${device_name}
+
+esp32:
+  board: lolin_s2_mini
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  ap:
+    ssid: ${device_name}-hotspot
+    password: !secret hotspot_password
+
+logger:
+
+api:
+
+ota:
+
+i2c:
+  scl: GPIO35
+  sda: GPIO33
+  scan: true
+
+button:
+- platform: restart
+  name: "${device_name}-reset"

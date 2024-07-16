@@ -1,0 +1,67 @@
+button:
+- platform: template
+  name: "${device_name}-buzzer-a"
+  on_press:
+  - script.execute: buzzer_fast
+- platform: template
+  name: "${device_name}-buzzer-b"
+  on_press:
+  - script.execute: buzzer_missile
+- platform: template
+  name: "${device_name}-buzzer-c"
+  on_press:
+  - script.execute: buzzer_alert
+
+output:
+- platform: gpio
+  pin: D8
+  id: buzzer
+
+script:
+- id: buzzer_fast
+  then:
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+- id: buzzer_missile
+  then:
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 300ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 100ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 300ms
+    - output.turn_off: buzzer
+- id: buzzer_alert
+  then:
+    - output.turn_on: buzzer
+    - delay: 400ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 400ms
+    - output.turn_off: buzzer
+    - delay: 50ms
+    - output.turn_on: buzzer
+    - delay: 400ms
+    - output.turn_off: buzzer

@@ -1,5 +1,7 @@
 .DS_Store
 /venv
 /esphome/venv
+/esphome/modules_d1mini/secrets.yaml
+/esphome/modules_s2mini/secrets.yaml
 /kicad/wemos-esphome-shield/gerber
 /kicad/wemos-esphome-shield/wemos-esphome-shield-backups

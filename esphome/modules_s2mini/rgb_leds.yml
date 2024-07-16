@@ -1,0 +1,7 @@
+light:
+- platform: neopixelbus
+  pin: GPIO7
+  name: "${device_name}-leds"
+  id: rgb_leds
+  variant: WS2812
+  num_leds: 2

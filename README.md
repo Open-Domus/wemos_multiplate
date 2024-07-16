@@ -7,26 +7,32 @@ Multifunctional device with esphome compatible sensors and interactive tools to 
 
 ## Features
 
+- Compatible with the all-popular development boards
+  - Wemos D1 mini (ESP8266 based, micro-usb connector)
+  - Wemos S2 mini (ESP32 based, usb-c connector)
 - OLED display (128x32 or 128x64 are supported)
-- LD2410C 24Ghz presence sensor
+- LD2410C 24Ghz human presence sensor
 - 2 addressable RGB LEDs
-- beeper
+- Beeper
 - SHT31 temperature/humidity sensor
-- 3 IR emitter LEDs
+- IR emitter
 - BH1750 ambient light sensor (optional)
 - APDS9960 gesture sensor (optional)
-- pin headers for external 5v relay module (optional)
-- extra pin headers for further expandability
-- fits in a 503 wall receptacle
-- 3D printable cover
+- Pin headers for external 5v relay module (optional)
+- Extra pin headers for further expandability
+- You can fit in a 503 wall receptacle, or just keep it as a small box on your desk
+- 3D printable enclosures
 
 ## Esphome compiling and flashing
 - install esphome on your machine. https://esphome.io/guides/installing_esphome.html
 - duplicate the `secrets_sample.yaml` file, rename it to `secrets.yaml`, and fill your wifi SSID data in.
-- duplicate `esphome/multiplate.yml` file, rename it to your liking.
+- if you want to use a Wemos D1 mini:
+  - duplicate `esphome/multiplate_d1mini.yml` file, rename it to your liking.
+- if you want to use a Wemos S2 mini:
+  - duplicate `esphome/multiplate_s2mini.yml` file, rename it to your liking.
 - open the duplicated file and edit `device_name` to your liking, and comment/uncomment the modules you want to use.
-- connect the Wemos D1 mini via USB and flash it using the `esphome run` command.
-- disconnect the Wemos D1 mini, insert it into the multiplate, and enjoy.
+- connect your Wemos board via USB and flash it using the `esphome run` command.
+- disconnect the Wemos board, insert it into the multiplate, and enjoy.
 
 ## Home Assistant device page preview
 

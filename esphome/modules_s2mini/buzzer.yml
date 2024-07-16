@@ -14,7 +14,7 @@ button:
 
 switch:
 - platform: gpio
-  pin: GPIO13
+  pin: GPIO12
   id: buzzer
   internal: true
 

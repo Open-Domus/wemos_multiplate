@@ -1,4 +1,4 @@
 (fp_lib_table
-  (lib (name "wemos-d1-mini")(type "KiCad")(uri "${KIPRJMOD}/libs/wemos-d1-mini.pretty")(options "")(descr ""))
+  (version 7)
   (lib (name "internal")(type "KiCad")(uri "${KIPRJMOD}/libs/internal.pretty")(options "")(descr ""))
 )

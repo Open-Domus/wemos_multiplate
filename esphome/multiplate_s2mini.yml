@@ -14,6 +14,7 @@ packages:
   light_sensor: !include modules_common/light_sensor.yml
   motion_sensor: !include modules_s2mini/motion_sensor.yml
   ir_remote: !include modules_s2mini/ir_remote.yml
+  buttons: !include modules_s2mini/buttons.yml
 
 # Automations: uncomment the ones you want to activate.
   display_motion: !include automations/display_motion.yml

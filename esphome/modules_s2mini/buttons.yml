@@ -1,0 +1,32 @@
+
+binary_sensor:
+- platform: gpio
+  name: "${device_name}-button-1"
+  pin:
+    number: GPIO2
+    mode:
+      input: true
+      pullup: true
+    inverted: true
+  filters:
+    delayed_on_off: 10ms
+- platform: gpio
+  name: "${device_name}-button-2"
+  pin:
+    number: GPIO4
+    mode:
+      input: true
+      pullup: true
+    inverted: true
+  filters:
+    delayed_on_off: 10ms
+- platform: gpio
+  name: "${device_name}-button-3"
+  pin:
+    number: GPIO6
+    mode:
+      input: true
+      pullup: true
+    inverted: true
+  filters:
+    delayed_on_off: 10ms

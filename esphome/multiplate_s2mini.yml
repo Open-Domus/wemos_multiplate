@@ -4,8 +4,7 @@ substitutions:
 # You can comment out the lines of the modules you are not using.
 packages:
   common: !include modules_s2mini/common.yml
-  display: !include modules_common/display_128x32.yml
-  # display: !include modules_common/display_128x64.yml
+  display: !include modules_common/display.yml
   rgb_leds: !include modules_s2mini/rgb_leds.yml
   buzzer: !include modules_s2mini/buzzer.yml
   relay: !include modules_s2mini/relay.yml

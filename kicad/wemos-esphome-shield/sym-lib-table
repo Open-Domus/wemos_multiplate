@@ -1,4 +1,4 @@
 (sym_lib_table
-  (lib (name "wemos_mini")(type "Legacy")(uri "${KIPRJMOD}/libs/wemos_mini.lib")(options "")(descr ""))
-  (lib (name "custom")(type "KiCad")(uri "${KIPRJMOD}/custom.kicad_sym")(options "")(descr ""))
+  (version 7)
+  (lib (name "internal")(type "KiCad")(uri "${KIPRJMOD}/libs/internal.kicad_sym")(options "")(descr ""))
 )

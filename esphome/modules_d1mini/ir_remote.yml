@@ -1,4 +1,11 @@
 remote_transmitter:
-  pin: D6
   id: ir_remote
+  pin: D6
   carrier_duty_percent: 50%
+
+remote_receiver:
+  id: ir_rx
+  pin:
+    number: D4
+    inverted: true
+  # dump: raw

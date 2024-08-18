@@ -10,7 +10,7 @@ Multifunctional device with esphome compatible sensors and interactive tools to 
 - Compatible with the all-popular development boards
   - Wemos D1 mini (ESP8266 based, micro-usb connector)
   - Wemos S2 mini (ESP32 based, usb-c connector)
-- OLED display (128x32 or 128x64 are supported)
+- 128x64 OLED display
 - LD2410C 24Ghz human presence sensor
 - 2 addressable RGB LEDs
 - Beeper
@@ -51,15 +51,7 @@ The sensor internally has 8 'gates', each one representing a distance area from 
 
 Note: it is possible to expose all the sensitivity tuning controls via ESPhome to Home Asisstant, but we are not doing that. This reduces computational load on the Wemos D1 mini.
 
-### Gesture sensor
-
-TODO
-
-### OLED Display
-
-You can use either 128x32 or 128x64 OLED modules. Just uncomment the corresponding `display` line in your main yml file.
-
-### IR blaster
+### IR remote
 
 If you want to use the IR leds as a remote, please add any entity you want to use the IR transmitter with, to the main yml file. Use `ir_remote` as the transmitter id. Example:
 
@@ -68,4 +60,5 @@ climate:
   - platform: daikin
     name: ${device_name}-climate
     transmitter_id: ir_remote
+    receiver_id: ir_rx
 ```

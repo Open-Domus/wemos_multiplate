@@ -1,4 +1,11 @@
 remote_transmitter:
-  pin: GPIO9
   id: ir_remote
+  pin: GPIO9
   carrier_duty_percent: 50%
+
+remote_receiver:
+  id: ir_rx
+  pin:
+    number: GPIO16
+    inverted: true
+  # dump: raw

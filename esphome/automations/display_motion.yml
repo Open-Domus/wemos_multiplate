@@ -1,6 +1,6 @@
 binary_sensor:
 - id: !extend motion_sensor
   on_press:
-    - display.page.show: display_page_1
+    - script.execute: show_page_readout
   on_release:
-    - display.page.show: display_page_empty
+    - script.execute: show_page_empty

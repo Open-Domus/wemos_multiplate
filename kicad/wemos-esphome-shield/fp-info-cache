@@ -1,4 +1,4 @@
-22673179783034068
+22662945436313061
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -93058,13 +93058,6 @@ BH1750
 5
 5
 internal
-BME280
-
-
-0
-4
-4
-internal
 LD2410C
 
 
@@ -93078,13 +93071,6 @@ LED breakout
 0
 6
 4
-internal
-LED ring
-
-
-0
-6
-3
 internal
 SOT-23_Handsoldering
 SOT-23, Handsoldering
@@ -93114,37 +93100,9 @@ SSD1306 OLED 128x64
 4
 4
 internal
-TEMT6000
-
-
+WEMOS_S2_mini
+32-pin module, https://www.wemos.cc/en/latest/s2/s2_mini.html
+ESP32-S2FN4R2 WiFi microcontroller
 0
-3
-3
-wemos-d1-mini
-wemos-d1-mini-connectors-only
-
-
-0
-16
-16
-wemos-d1-mini
-wemos-d1-mini-embedded
-
-
-0
-16
-16
-wemos-d1-mini
-wemos-d1-mini-with-pin-header
-
-
-0
-16
-16
-wemos-d1-mini
-wemos-d1-mini-with-pin-header-and-connector
-
-
-0
-16
-16
+32
+32

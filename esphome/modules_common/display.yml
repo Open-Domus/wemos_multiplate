@@ -48,25 +48,13 @@ interval:
           then:
             - script.execute: toggle_non_empty_pages
 
-# Optional: example of how your presence automations might hook in
-# binary_sensor:
-#   - platform: your_presence
-#     id: room_presence
-#     on_state:
-#       then:
-#         - if:
-#             condition:
-#               binary_sensor.is_on: room_presence
-#             then:
-#               - script.execute: show_page_readout
-#             else:
-#               - script.execute: show_page_empty
-
 graph:
   - id: temp_graph
     duration: 4h
     width: 126
     height: 46
+    y_grid: 1.0
+    x_grid: 60min
     traces:
       - sensor: temperature_sensor
 
@@ -108,8 +96,9 @@ display:
       - id: display_page_trends
         lambda: |-
           it.fill(COLOR_OFF);
-          it.printf(2, 62,  id(font_xs), TextAlign::BOTTOM_LEFT, "Temp 4h");
           it.graph(2, 2, id(temp_graph));
+          it.printf(2, 62,  id(font_xs), TextAlign::BOTTOM_LEFT, "Temp 4h");
+          it.printf(126, 62,  id(font_xs), TextAlign::BOTTOM_RIGHT, "%.1f", id(temperature_sensor).state);
 
 font:
   - file: font/retrogaming.ttf

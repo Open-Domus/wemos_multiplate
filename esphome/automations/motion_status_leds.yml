@@ -3,8 +3,16 @@ switch:
     name: "${device_name}-motion-leds"
     id: motion_leds_switch
     optimistic: true
-    restore_state: true
-    initial_state: on
+    restore_mode: RESTORE_DEFAULT_ON
+    entity_category: CONFIG
+    turn_off_action:
+      - light.addressable_set:
+          id: rgb_leds
+          range_from: 0
+          range_to: 1
+          red: 0%
+          green: 0%
+          blue: 0%
 
 binary_sensor:
 - id: !extend moving_target_sensor

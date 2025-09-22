@@ -3,8 +3,8 @@ switch:
     name: "${device_name}-motion-display"
     id: motion_display_switch
     optimistic: true
-    restore_state: true
-    initial_state: on
+    restore_mode: RESTORE_DEFAULT_ON
+    entity_category: CONFIG
     turn_off_action:
       - script.execute: show_page_empty  # clear screen when disabling
 

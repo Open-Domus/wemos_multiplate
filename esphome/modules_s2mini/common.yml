@@ -3,11 +3,13 @@ esphome:
 
 esp32:
   board: lolin_s2_mini
+  variant: esp32s2
 
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-
+#  output_power: 18db
+#  fast_connect: true
   ap:
     ssid: ${device_name}-hotspot
     password: !secret hotspot_password

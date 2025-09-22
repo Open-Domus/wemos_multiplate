@@ -8,4 +8,4 @@ remote_receiver:
   pin:
     number: D4
     inverted: true
-  # dump: raw
+  dump: raw

@@ -8,4 +8,4 @@ remote_receiver:
   pin:
     number: GPIO16
     inverted: true
-  # dump: raw
+  dump: raw

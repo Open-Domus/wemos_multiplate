@@ -2,3 +2,4 @@ switch:
 - platform: gpio
   pin: D7
   name: "${device_name}-relay"
+  id: relay_output

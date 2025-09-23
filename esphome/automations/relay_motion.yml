@@ -1,0 +1,41 @@
+substitutions:
+  motion_relay_hold_time: 2min  # delay before cutting power when the room is empty
+
+script:
+  - id: motion_relay_release_timer
+    mode: restart
+    then:
+      - delay: ${motion_relay_hold_time}
+      - if:
+          condition:
+            and:
+              - switch.is_on: motion_relay_switch
+              - binary_sensor.is_off: motion_sensor
+          then:
+            - switch.turn_off: relay_output
+
+switch:
+  - platform: template
+    name: "${device_name}-motion-relay"
+    id: motion_relay_switch
+    optimistic: true
+    restore_mode: RESTORE_DEFAULT_OFF
+    turn_off_action:
+      - script.stop: motion_relay_release_timer
+      - switch.turn_off: relay_output
+
+binary_sensor:
+  - id: !extend motion_sensor
+    on_press:
+      - if:
+          condition:
+            switch.is_on: motion_relay_switch
+          then:
+            - switch.turn_on: relay_output
+            - script.stop: motion_relay_release_timer
+    on_release:
+      - if:
+          condition:
+            switch.is_on: motion_relay_switch
+          then:
+            - script.execute: motion_relay_release_timer

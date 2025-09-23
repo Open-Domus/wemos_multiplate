@@ -15,7 +15,6 @@ Wemos Multiplate is a modular, ESPHome-powered front plate for Wemos D1 mini and
 ## Repository Layout
 - `esphome/` – modular ESPHome configuration split by board (`modules_d1mini/`, `modules_s2mini/`) and shared components (`modules_common/`). Sample automations are under `esphome/automations/`.
 - `kicad/wemos-esphome-shield/` – KiCad project, gerbers, STEP models, and release archives for the PCB.
-- `images/` – renders and photos used by this README.
 
 ## Hardware Overview
 **Base components**
@@ -90,6 +89,7 @@ PCB fabrication files for the latest revision live in `kicad/wemos-esphome-shiel
 ## Built-in Automations
 - `display_motion` keeps the OLED blank until motion is detected, then shows the readout page.
 - `motion_status_leds` maps moving and still target detection to the two WS2812 LEDs.
+
 Enable or disable these from the `packages:` block just like the hardware modules.
 
 ## Tuning the LD2410C mmWave Sensor

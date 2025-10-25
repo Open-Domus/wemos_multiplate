@@ -20,6 +20,7 @@ switch:
     id: motion_relay_switch
     optimistic: true
     restore_mode: RESTORE_DEFAULT_OFF
+    entity_category: CONFIG
     turn_off_action:
       - script.stop: motion_relay_release_timer
       - switch.turn_off: relay_output

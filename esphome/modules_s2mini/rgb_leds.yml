@@ -1,7 +1,8 @@
 light:
-- platform: neopixelbus
+- platform: esp32_rmt_led_strip
   pin: GPIO7
   name: "${device_name}-leds"
   id: rgb_leds
-  variant: WS2812
+  chipset: WS2812
+  rgb_order: GRB
   num_leds: 2

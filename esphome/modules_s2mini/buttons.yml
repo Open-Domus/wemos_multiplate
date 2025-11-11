@@ -9,7 +9,7 @@ binary_sensor:
       pullup: true
     inverted: true
   filters:
-    delayed_on_off: 10ms
+    - delayed_on_off: 10ms
 - platform: gpio
   name: "${device_name}-button-2"
   pin:
@@ -19,7 +19,7 @@ binary_sensor:
       pullup: true
     inverted: true
   filters:
-    delayed_on_off: 10ms
+    - delayed_on_off: 10ms
 - platform: gpio
   name: "${device_name}-button-3"
   pin:
@@ -29,4 +29,4 @@ binary_sensor:
       pullup: true
     inverted: true
   filters:
-    delayed_on_off: 10ms
+    - delayed_on_off: 10ms

@@ -9,16 +9,16 @@ switch:
       - script.execute: show_page_empty  # clear screen when disabling
 
 binary_sensor:
-- id: !extend motion_sensor
-  on_press:
-    - if:
-        condition:
-          switch.is_on: motion_display_switch
-        then:
-          - script.execute: show_page_readout
-  on_release:
-    - if:
-        condition:
-          switch.is_on: motion_display_switch
-        then:
-          - script.execute: show_page_empty
+  - id: !extend motion_sensor
+    on_press:
+      - if:
+          condition:
+            switch.is_on: motion_display_switch
+          then:
+            - script.execute: show_page_readout
+    on_release:
+      - if:
+          condition:
+            switch.is_on: motion_display_switch
+          then:
+            - script.execute: show_page_empty

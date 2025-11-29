@@ -10,9 +10,6 @@ preferences:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_password
-  fast_connect: true
-  power_save_mode: none
-  reboot_timeout: 15min
 
   ap:
     ssid: ${device_name}-hotspot
@@ -35,4 +32,13 @@ i2c:
 
 button:
 - platform: restart
-  name: "${device_name}-reset"
+  name: "${device_name}-restart"
+  entity_category: config
+- platform: factory_reset
+  name: "${device_name}-factory-reset"
+  id: Reset
+  entity_category: config
+- platform: safe_mode
+  name: "${device_name}-safe-mode"
+  internal: false
+  entity_category: config

@@ -1,18 +1,8 @@
 sensor:
 - platform: sht3xd
   temperature:
-    name: "${device_name}-temperature"
-    id: temperature_sensor
-    filters:
-      - median:
-          window_size: 10
-          send_every: 2
-          send_first_at: 2
-      - calibrate_linear:
-          datapoints:
-            # sensor -> true value
-            - 0.0 -> 0.0
-            - 22.5 -> 20.0
+    name: "${device_name}-temperature-raw"
+    id: temperature_sensor_raw
   humidity:
     name: "${device_name}-humidity"
     id: humidity_sensor
@@ -23,3 +13,21 @@ sensor:
           send_first_at: 2
   address: 0x44
   update_interval: 30s
+- platform: template
+  id: temperature_sensor
+  name: "${device_name}-temperature"
+  device_class: temperature
+  state_class: measurement
+  unit_of_measurement: "°C"
+  accuracy_decimals: 1
+  lambda: |-
+    return id(temperature_sensor_raw).state;
+  update_interval: 30s
+  filters:
+  - median:
+      window_size: 15
+      send_every: 1
+  - sliding_window_moving_average:
+      window_size: 10
+      send_every: 4
+  - offset: -2.6

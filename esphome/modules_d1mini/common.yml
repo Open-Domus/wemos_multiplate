@@ -3,6 +3,7 @@ esphome:
 
 esp8266:
   board: d1_mini
+  restore_from_flash: true
 
 preferences:
   flash_write_interval: 10min
@@ -42,3 +43,4 @@ button:
   name: "${device_name}-safe-mode"
   internal: false
   entity_category: config
+
